@@ -1,0 +1,35 @@
+<?php
+    session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>smth</title>
+        <style>
+            body{
+                background-color: #EFEEEE;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.php"><h3 style="color: #5E63B6; text-align: right;">smth</h3></a>
+                <ul>
+                    <?php
+                        if(isset($_SESSION["useruid"])){
+                            echo "<li><a href='profile.php'>Profile page</a></li>";
+                            echo "<li><a href='includes/logout.inc.php'>Log out</a></li>";
+                        }
+                        else{
+                            echo "<li><a href='login.php'>Login</a></li>";
+                            echo "<li><a href='signup.php'>Sign Up</a></li>";
+                        }
+                    ?>
+
+                </ul>
+            </div>
+        </nav>
